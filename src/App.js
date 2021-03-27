@@ -13,15 +13,22 @@ class App extends Component{
     constructor (){
       super();
       this.state = {
-        name: "BTS",
-        age: 22
+        count: 0
       }
+      this.countChange = this.countChange.bind(this)
+    }
+    countChange(){
+        this.setState(prevState =>{
+            return {
+                count : prevState.count + 1
+            }
+        })
     }
     render(){
       return(
         <div>
-          <h1>{this.state.name}</h1>
-          <h3>{this.state.age}</h3>
+          <h1 style={{textAlign: centar}}>{this.state.count}</h1>
+          <button onClick={this.countChange}>Change!</button>
         </div>
       )
     }
