@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 
 // import App from './App'
@@ -49,16 +49,26 @@ class App extends React.Component{
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange (){
-      return(
-          console.log("change1")
-      )
+  handleChange (id){
+    this.setState(prevState => {
+      const updatedTodos = prevState.todos.map(todo =>{
+        if(todo.id === id){
+          todo.completed = !todo.completed 
+          
+        }
+        return todo
+        })
+      return {
+        todos: updatedTodos 
+      }
+    })
   }
+  
   render(){
     const todoItems = todoData.map(data => <TodoItems key={data.id} data={data} handleChange={this.handleChange}/>)
     return (
       <div className="todo-list">
-        {todoItems}   
+        {todoItems}    
       </div>
     )
   }

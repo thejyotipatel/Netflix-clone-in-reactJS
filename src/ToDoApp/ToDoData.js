@@ -21,7 +21,7 @@ const todoData = [
       },
       {
         id: 5,
-        text: "Cath up on Arrested Development",
+        text: "Catch up on Arrested Development",
         completed: false
       }
 ]
