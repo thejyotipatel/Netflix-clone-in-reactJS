@@ -27,7 +27,7 @@ class App extends Component{
     render(){
       return(
         <div>
-          <h1 style={{textAlign: centar}}>{this.state.count}</h1>
+          <h1>{this.state.count}</h1>
           <button onClick={this.countChange}>Change!</button>
         </div>
       )

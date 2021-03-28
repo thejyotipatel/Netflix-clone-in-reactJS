@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './App'
+// import App from './App'
 
-// import TodoItems from './ToDoApp/TodoItems'
-// import todoData from './ToDoApp/ToDoData'
-// import './style.css'
+import TodoItems from './ToDoApp/TodoItems'
+import todoData from './ToDoApp/ToDoData'
+import './style.css'
  
 // import Quote from './Quotes/Quote'
 // import quotes from './Quotes/QuotesData' 
@@ -39,23 +39,31 @@ import App from './App'
 //   )
 // }
 
-// class App extends React.Component{
-//   constructor(){
-//     super()
-//     this.state = {
-//       todos:todoData
-//     }
-//   }
-//   render(){
-//     const todoItems = todoData.map(data => <TodoItems key={data.id} data={data}/>)
-//     return (
-//       <div className="todo-list">
-//         {todoItems}   
-//       </div>
-//     )
-//   }
+class App extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      todos: todoData
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange (){
+      return(
+          console.log("change1")
+      )
+  }
+  render(){
+    const todoItems = todoData.map(data => <TodoItems key={data.id} data={data} handleChange={this.handleChange}/>)
+    return (
+      <div className="todo-list">
+        {todoItems}   
+      </div>
+    )
+  }
    
-// } 
+} 
 
 
 ReactDOM.render(<App />,document.getElementById('root'))

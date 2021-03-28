@@ -5,7 +5,7 @@ import '../style.css'
 function TodoItems(props){
     return (
         <div className='todo-item'> 
-            <input type='checkbox' checked={props.data.completed} onChange={() => console.log("Changed")}/>
+            <input type='checkbox' checked={props.data.completed}  />
             <p>{props.data.text}</p>
         </div>
     )
