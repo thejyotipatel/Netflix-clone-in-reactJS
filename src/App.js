@@ -9,28 +9,52 @@ import React, {Component} from 'react'
 //     )
 // }
 
+// class App extends Component{
+//     constructor (){
+//       super();
+//       this.state = {
+//         unreadMessage: []
+//       } 
+//     } 
+
+//     render(){
+//       return(
+//         <div>
+//           {
+//             this.state.unreadMessage.length > 0 &&
+//             <h1>You have {this.state.unreadMessage.length} unread messages!</h1>
+//           }
+//         </div>
+//       )
+//     }
+// }
+
 class App extends Component{
-    constructor (){
-      super();
-      this.state = {
-        count: 0
+  constructor (){
+    super();
+    this.state = { 
+      isLoggedIn: false
+    } 
+    this.onChange = this.onChange.bind(this)
+  } 
+
+  onChange(){ 
+    this.setState(prevState => {
+      return {
+        isLoggedIn: !prevState.isLoggedIn
       }
-      this.countChange = this.countChange.bind(this)
-    }
-    countChange(){
-        this.setState(prevState =>{
-            return {
-                count : prevState.count + 1
-            }
-        })
-    }
-    render(){
-      return(
-        <div>
-          <h1>{this.state.count}</h1>
-          <button onClick={this.countChange}>Change!</button>
-        </div>
-      )
-    }
+    })
+  }
+
+  render(){
+    let butText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN"
+    let displayText = this.state.isLoggedIn ? "Logged in" : "Logged out"
+    return(
+      <div>
+        <button onClick={this.onChange}>{butText}</button>
+        <h1>{displayText}</h1>
+      </div>
+    )
+  }
 }
 export default App

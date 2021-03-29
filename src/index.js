@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// import App from './App'
+import App from './foram/App'
 
-import TodoItems from './ToDoApp/TodoItems'
-import todoData from './ToDoApp/ToDoData'
-import './style.css'
+// import TodoItems from './ToDoApp/TodoItems'
+// import todoData from './ToDoApp/ToDoData'
+// import './style.css'
  
 // import Quote from './Quotes/Quote'
 // import quotes from './Quotes/QuotesData' 
@@ -39,41 +39,41 @@ import './style.css'
 //   )
 // }
 
-class App extends React.Component{
-  constructor(){
-    super()
-    this.state = {
-      todos: todoData
-    }
+// class App extends React.Component{
+//   constructor(){
+//     super()
+//     this.state = {
+//       todos: todoData
+//     }
 
-    this.handleChange = this.handleChange.bind(this)
-  }
+//     this.handleChange = this.handleChange.bind(this)
+//   }
 
-  handleChange (id){
-    this.setState(prevState => {
-      const updatedTodos = prevState.todos.map(todo =>{
-        if(todo.id === id){
-          todo.completed = !todo.completed 
+//   handleChange (id){
+//     this.setState(prevState => {
+//       const updatedTodos = prevState.todos.map(todo =>{
+//         if(todo.id === id){
+//           todo.completed = !todo.completed 
           
-        }
-        return todo
-        })
-      return {
-        todos: updatedTodos 
-      }
-    })
-  }
+//         }
+//         return todo
+//         })
+//       return {
+//         todos: updatedTodos 
+//       }
+//     })
+//   }
   
-  render(){
-    const todoItems = todoData.map(data => <TodoItems key={data.id} data={data} handleChange={this.handleChange}/>)
-    return (
-      <div className="todo-list">
-        {todoItems}    
-      </div>
-    )
-  }
+//   render(){
+//     const todoItems = todoData.map(data => <TodoItems key={data.id} data={data} handleChange={this.handleChange}/>)
+//     return (
+//       <div className="todo-list">
+//         {todoItems}    
+//       </div>
+//     )
+//   }
    
-} 
+// } 
 
 
 ReactDOM.render(<App />,document.getElementById('root'))
