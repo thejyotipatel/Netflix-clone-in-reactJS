@@ -1,42 +1,38 @@
 import React, {Component} from 'react'
+import FromUI from './FromUI'
 
 class App extends Component{
-    constructor(){
-        super()
-        this.state ={
+    
+    state ={
             fName: '',
-            lName: ''
+            lName: '',
+            age: null,
+            gender: '', 
+            reading: false,
+            danceing: false,
+            running: false,
+            music: false
+ 
         }
-        this.handleChange = this.handleChange.bind(this)
-    }
-
-    handleChange(e){
-        const {name, value} = e.target
+         
+    handleChange = (e) => {
+        const {name, value, type, checked} = e.target 
+        type === "checkbox" ?
+            this.setState({
+                [name]: checked
+            })
+        :
         this.setState({
-            [name]: value
-        })
-    }
+                [name]: value
+            })
+        }
 
     render(){
         return(
-            <form>
-                <input 
-                    type='text'
-                    value={this.state.fName} 
-                    name='fName' 
-                    placeHolder='first name' 
-                    onChange={this.handleChange} 
-                />
-                <br/>
-                <input 
-                    type='text'
-                    value={this.state.lName} 
-                    name='lName' 
-                    placeHolder='last name'  
-                    onChange={this.handleChange}
-                />
-                <h1>{this.state.fName}  {this.state.lName}</h1>
-            </form>
+             <FromUI 
+                handleChange = {this.handleChange}
+                data={this.state}
+             />
         )
     }
 }
