@@ -12,7 +12,7 @@ class App extends Component{
             danceing: false,
             running: false,
             music: false
- 
+            
         }
          
     handleChange = (e) => {

@@ -61,7 +61,7 @@ function FromUI(props){
                             type="checkbox" 
                             name='reading' 
                             onChange={props.handleChange} 
-                            checked={props.date.reading}
+                            // checked={props.date.reading}
                         />Reading 
                     </label>
                     <label>
@@ -69,7 +69,7 @@ function FromUI(props){
                             type="checkbox" 
                             name='running' 
                             onChange={props.handleChange} 
-                            checked={props.date.running}
+                            // checked={props.date.running}
                         />Running 
                     </label> 
                     <label>
@@ -77,15 +77,22 @@ function FromUI(props){
                             type="checkbox" 
                             name='music' 
                             onChange={props.handleChange} 
-                            checked={props.date.music}
+                            // checked={props.date.music}
                         />Music 
                     </label> 
                     <br/> <br/> <hr/>
                     <h1>Information:</h1>
                     <h3> name: {props.data.fName}  {props.data.lName}</h3>
-                    <h3>Age: {props.data.age}</h3>
+                    <h3>Age: {props.data.age ? props.data.age : '18'}</h3>
                     <h3>Gender: {props.data.gender}</h3>
-                    <h3>Your are Hobbies {props.data.danceing} ? 'Danceing' : ""</h3>
+                    <h3>Your are Hobbies : 
+                        {
+                        props.data.danceing ? 'Danceing'  : "" ||
+                        props.data.reading  ? 'Reading'  : "" ||
+                        props.data.running  ? 'Running'  : "" ||
+                        props.data.music  ? 'Music'  : "" 
+                        }
+                    </h3>
                 </form>
             </main>
         )
