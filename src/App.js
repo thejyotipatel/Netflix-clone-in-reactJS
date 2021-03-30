@@ -1,60 +1,46 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react' 
 
-// function App(){
-//     return (
-//         <div class> 
-//             <input type="checkbox" /> 
-//             <p>this is paragraph 1</p>
-//         </div>
-//     )
-// }
+import TodoItems from './ToDoApp/TodoItems'
+import todoData from './ToDoApp/ToDoData'
 
-// class App extends Component{
-//     constructor (){
-//       super();
-//       this.state = {
-//         unreadMessage: []
-//       } 
-//     } 
+import './style.css'
+  
+class App extends Component{ 
+    state = {
+          todos: todoData
+        }
+ 
 
-//     render(){
-//       return(
-//         <div>
-//           {
-//             this.state.unreadMessage.length > 0 &&
-//             <h1>You have {this.state.unreadMessage.length} unread messages!</h1>
-//           }
-//         </div>
-//       )
-//     }
-// }
-
-class App extends Component{
-  constructor (){
-    super();
-    this.state = { 
-      isLoggedIn: false
-    } 
-    this.onChange = this.onChange.bind(this)
-  } 
-
-  onChange(){ 
+  handleChange = (id) => {
+    
     this.setState(prevState => {
+      const updatedTodos = prevState.todos.map(todo =>{
+        if(todo.id === id){
+          todo.completed = !todo.completed 
+          
+        }
+        return todo
+        })
       return {
-        isLoggedIn: !prevState.isLoggedIn
+        todos: updatedTodos 
       }
     })
   }
-
+  
   render(){
-    let butText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN"
-    let displayText = this.state.isLoggedIn ? "Logged in" : "Logged out"
-    return(
-      <div>
-        <button onClick={this.onChange}>{butText}</button>
-        <h1>{displayText}</h1>
+    const todoItems = todoData.map(data => 
+                                <TodoItems 
+                                  key={data.id} 
+                                  data={data} 
+                                  handleChange={this.handleChange}
+                                />
+                              )
+    return (
+      <div className="todo-list">
+        {todoItems}    
       </div>
     )
   }
-}
-export default App
+   
+} 
+export default App 
