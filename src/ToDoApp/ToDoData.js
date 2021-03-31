@@ -11,7 +11,7 @@ const todoData = [
       },
       {
         id: 3,
-        text: "clean clothes",
+        text: "Wash clothes",
         completed: false
       },
       {
@@ -21,7 +21,7 @@ const todoData = [
       },
       {
         id: 5,
-        text: "Catch up on Arrested Development",
+        text: " Post video on YouTube",
         completed: false
       }
 ]
