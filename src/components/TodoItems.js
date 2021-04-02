@@ -1,7 +1,7 @@
 import React from 'react'
 
 import '../style.css' 
-import './fontawesome-free-5.15.2-web/css/all.css'
+import '../../../../webside for web serises/fontawesome-free-5.15.2-web/css/all.css'
 
 
 const TodoItems = (props) =>{
@@ -19,8 +19,7 @@ const TodoItems = (props) =>{
                 {/* {props.data.text} */}
             </li> 
             <div> 
-                <button
-                tooltip='hello'
+                <button 
                     onClick={() => props.handleChange(props.data.id)} 
                 > 
                     <i className="btn fas fa-check"></i>
@@ -31,7 +30,7 @@ const TodoItems = (props) =>{
                     <i className="btn fas fa-trash"></i>
                 </button>
             </div>
-            
+             
         </div>
     )
 }
