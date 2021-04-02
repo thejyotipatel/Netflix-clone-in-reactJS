@@ -1,46 +1,27 @@
-import React, {Component} from 'react' 
+import React, {useState} from 'react' 
 
-import TodoItems from './ToDoApp/TodoItems'
-import todoData from './ToDoApp/ToDoData'
+import TodoItems from './components/TodoItems' 
+import Form from './components/Form'
 
 import './style.css'
   
-class App extends Component{ 
-    state = {
-          todos: todoData
-        }
- 
-
-  handleChange = (id) => {
+function App() { 
+   
+  const [inputText, setInputText] = useState("");
+  const [todos, setTodos] = useState([]);
     
-    this.setState(prevState => {
-      const updatedTodos = prevState.todos.map(todo =>{
-        if(todo.id === id){
-          todo.completed = !todo.completed 
-          
-        }
-        return todo
-        })
-      return {
-        todos: updatedTodos 
-      }
-    })
-  }
-  
-  render(){
-    const todoItems = todoData.map(data => 
-                                <TodoItems 
-                                  key={data.id} 
-                                  data={data} 
-                                  handleChange={this.handleChange}
-                                />
-                              )
-    return (
-      <div className="todo-list">
-        {todoItems}   
-      </div>
-    )
-  }
+  return (
+    <div className="todo-list">
+      <Form 
+        inputText={inputText}
+        setInputText={setInputText}
+        todos={todos}
+        setTodos={setTodos}
+      />  
+      <TodoItems setInputText={setInputText}/>
+       <h1>{ inputText}</h1>
+    </div>
+  )
    
 } 
 export default App 

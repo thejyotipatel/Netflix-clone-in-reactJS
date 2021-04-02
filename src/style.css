@@ -1,5 +1,11 @@
+:root{
+    --main-color: #191c2f;
+
+}
 body{
-    background-color: #191c2f;
+    background-color: var(--main-color);
+    color: var(--main-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .todo-list{
@@ -24,25 +30,84 @@ body{
     padding: 30px;
 }
 
-.todo-item{
+/* Input section */
+input[type=text]{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid  #191c2f71;
+    text-align: center;
+    width: 50%;
+    padding: 20px 0px 0 20px;
+    font-size: 15px; 
+}
+
+input[type=text]:focus{
+    border-color: var(--main-color);
+}
+
+button[type=submit]{
+    width: 10%;
+    color: var(--main-color);
+    font-weight: 900;
+    font-size: 1rem;
+}
+select{
+    width: 32%;
+    font-size: 15px;
+    color: var(--main-color); 
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+select option{
+    text-align: center;
+    color: white;
+    outline: none;
+    background-color: var(--main-color);
+}
+select option:active{
+    background-color: var(--main-color);
+}
+select:focus{
+    border-color: var(--main-color);
+}
+
+select option:hover{
+    background-color: var(--main-color);
+}
+
+/* list section */
+.todo{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center; 
-    padding: 20px 20px 0;
+    padding: 20px 20px 0 20px;
     width: 70%;
     border-bottom: 1px solid  #191c2f71;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     font-size: 15px;
-    color: #333333;
+    color: var(--main-color);
+} 
+li{
+    list-style: none;
+}
+button{ 
+    font-size: 1rem;
+    background: transparent;
+    outline: none;
+    border: 0; 
+    margin: 0.3rem 0 0.3rem 0.3rem;
+    font-weight: 900;
+    cursor: pointer;
+    
+
+}
+button .btn{
+    color: var(--main-color);
+} 
+button .btn:hover, button[type=submit]:hover{
+    color: #191c2f71;
 }
 
-input[type=checkbox]{
-    margin-left: 10px;
-    font-size: 30px;
-    margin-right: 0.5rem;
-}
-
-input[type=checkbox]:focus{
-    outline: 0;
-}
