@@ -5,9 +5,10 @@ import './fontawesome-free-5.15.2-web/css/all.css'
 
 const Form = ({setInputText, inputText, todos, setTodos}) =>{
 
-    const inputHandler = (e) => {
-        console.log(e.target.value)
+    const inputHandler = (e) => { 
+
         setInputText(e.target.value)
+
     }
 
     const submitTodoHandler = (e) => {
@@ -17,16 +18,17 @@ const Form = ({setInputText, inputText, todos, setTodos}) =>{
             {
                 text: inputText,
                 completed: false,
-                id: Math.random() * 100
+                id: (Math.random() * 100)
             }
         ])
-        console.log(todos)
+        setInputText("")
     }
 
     return (
         <form>
             <input 
                 type="text"  
+                value={inputText}
                 placeholder="Add list items"
                 className="todo-input"
                 onChange={inputHandler}
