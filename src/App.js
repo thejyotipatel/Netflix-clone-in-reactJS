@@ -18,8 +18,10 @@ function App() {
         todos={todos}
         setTodos={setTodos}
       />  
-      <TodoItems setInputText={setInputText}/>
-       <h1>{ inputText}</h1>
+      <TodoItems
+        todos={todos}
+        setTodos={setTodos}
+      /> 
     </div>
   )
    

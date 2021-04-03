@@ -18,6 +18,6 @@ const TodoItems = ({ todos, setTodos }) => {
             </ul>
         </div>
     )
-}
+} 
 
 export default TodoItems 
