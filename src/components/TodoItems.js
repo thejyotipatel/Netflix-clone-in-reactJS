@@ -2,11 +2,11 @@ import React from 'react'
 
 import Todo from './Todo'
 
-const TodoItems = ({ todos, setTodos }) => { 
+const TodoItems = ({ todos, setTodos, filterTodos }) => { 
     return ( 
         <div>
             <ul className='todo'>
-                {todos.map((todo) =>(
+                {filterTodos.map((todo) =>(
                     <Todo 
                         setTodos={setTodos}
                         todos={todos}

@@ -3,7 +3,7 @@ import React from 'react'
 import '../style.css'
 import './fontawesome-free-5.15.2-web/css/all.css'
 
-const Form = ({setInputText, inputText, todos, setTodos}) =>{
+const Form = ({setInputText, inputText, todos, setTodos, setStatus}) =>{
 
     const inputHandler = (e) => { 
 
@@ -24,6 +24,9 @@ const Form = ({setInputText, inputText, todos, setTodos}) =>{
         setInputText("")
     }
 
+    const statusHandler = (e) => {
+        setStatus(e.target.value)
+    }
     return (
         <form>
             <input 
@@ -41,7 +44,7 @@ const Form = ({setInputText, inputText, todos, setTodos}) =>{
                 <i className="fas fa-plus-square"></i>
             </button>
 
-            <select name="todos">
+            <select onChange={statusHandler} name="todos">
                 <option value="all">All</option>
                 <option value="completed">Completed</option>
                 <option value="uncompleted">Uncompleted</option>
