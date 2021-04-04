@@ -1,7 +1,7 @@
 import React from 'react'
  
 import './style.css'
-import '../../../../webside for web serises/scss/fontawesome-free-5.15.2-web/css/all.css'
+import './fontawesome-free-5.15.2-web/css/all.css'
 
 const TimeLineItem = ({data, idx}) => {
     return(
@@ -13,7 +13,7 @@ const TimeLineItem = ({data, idx}) => {
                 {data.category.tag}
             </span>
 
-            <time>{data.time}</time>
+            <time>{data.date}</time>
             <p>{data.text}</p>
             {data.link && ( 
                 <a 
@@ -21,6 +21,7 @@ const TimeLineItem = ({data, idx}) => {
                     target="_blank" 
                     rel="noopener noreferrer" >
                     {data.link.text}
+                    <i className="play fas fa-play"></i>
                 </a>
             )} 
             <span className="circle"></span>
