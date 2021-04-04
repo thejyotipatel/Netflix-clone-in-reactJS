@@ -1,6 +1,8 @@
 import React from 'react'
 
-import '../style.css' 
+import './style.css' 
+import './fontawesome-free-5.15.2-web/css/all.css'
+
 
 const Todo = ({text, todo, todos, setTodos}) =>{
     const completedStyle = {
