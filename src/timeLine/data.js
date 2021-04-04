@@ -57,7 +57,7 @@ const timeLineData = [
         date: '19 Feb 2020',
         category: {
             tag: 'first-tag',
-            color: 'green'
+            color: 'purple'
         },
         link: {
             url: 'https://github.com',
