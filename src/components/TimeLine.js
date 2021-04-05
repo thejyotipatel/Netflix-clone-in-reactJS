@@ -1,7 +1,6 @@
 import React from 'react'
 
-import './style.css'
-import './fontawesome-free-5.15.2-web/css/all.css'
+import './style.css' 
 
 import timeLineData from './data'
 import TimeLineItem from './TimeLineItem'

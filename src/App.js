@@ -1,6 +1,6 @@
 import React from 'react'  
 
-import TimeLine from './timeLine/TimeLine'
+import TimeLine from './components/TimeLine'
   
 function App() { 
   return (
