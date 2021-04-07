@@ -113,12 +113,12 @@ li{
 }
 
 @media screen and (max-width: 767px){
-    
-img{
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-}
+        
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
  
     .recipe{
         width: calc(100% - 200px);
@@ -133,17 +133,17 @@ img{
     .recipe{
         width: calc(100% - 100px); 
     }
-    
-img{
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-}
-.calories span{
-    padding-left: 0px; 
-}
-.search-form div {
-    width: calc(100% - 100px);
-}
+        
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
+    .calories span{
+        padding-left: 0px; 
+    }
+    .search-form div {
+        width: calc(100% - 100px);
+    }
 }
   

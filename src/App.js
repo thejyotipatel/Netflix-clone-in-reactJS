@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'  
  
-import './components/fontawesome-free-5.15.2-web/css/all.css'
 import Reacipe from './components/Reacipe'
 import './components/style.css'
 
