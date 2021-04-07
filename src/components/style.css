@@ -15,7 +15,7 @@ body{
 }
 
 .app{
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .app h1{
@@ -29,8 +29,8 @@ body{
 .search-form{
     display: flex; 
     justify-content: center;
-    width: 100vw; 
-    height: 15vh;
+    align-items: center; 
+    min-height: 10vh;
 }
 .search-form div{
     margin-top: 1rem;
@@ -69,13 +69,31 @@ button{
     color: var(--font-color);  
     cursor: pointer;  
 }
+.recipes{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 .recipe{
-    display: flex;
+    display: flex;  
     flex-direction: column;
-    align-content: center;
-    width: 50%;
-    margin: 1rem;
-    height: 50vh;
+    justify-content: space-around;
+    background: var(--bg-color);
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px var(--shadow-color);
+    width: 25%;
+    min-width: 40%;
+    margin: 20px; 
+}
+ 
+img{
+    width: auto;
+    height: 200px;
+    border-radius: 10px;
+}
 
+@media only screen and (min-width: 767px){
+    
 }

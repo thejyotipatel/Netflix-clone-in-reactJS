@@ -3,7 +3,7 @@ import React from 'react'
 // const Reacipe = ({title, calories, image, ingredients, totalTime, cuisineType, source, url}) =>{
     const Reacipe = () =>{
         let img = require('./img.jpeg')
-    return(
+    return( 
        <div className="recipe">
            {/* <h1>{title} Chicken Vesuvio<span>italian{cuisineType}</span></h1> 
             <p>calories: 4228.043058200812{calories} Total Time: 60{totalTime} </p> */}
@@ -28,7 +28,7 @@ import React from 'react'
             <img src={image} alt="food imges"/> */}
             <p>Kenow more at <a href='!#' target="_blank" rel="noopener noreferrer"> BBC Good Food</a></p> 
             <img src={img.default} /> 
-       </div> 
+       </div>  
     )
 }
 

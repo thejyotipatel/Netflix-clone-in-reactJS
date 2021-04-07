@@ -60,6 +60,7 @@ const App = () => {
       </form>
 {/* 
       {recipes.map(recipe =>(  */}
+      <div className="recipes"> 
         <Reacipe 
           // key={recipe.recipe.label}
           // title={recipe.recipe.label}
@@ -71,8 +72,17 @@ const App = () => {
           // totalTime={recipe.recipe.totalTime}
           // url={recipe.recipe.url}
         />
-        {/* <Reacipe /> */}
+        <Reacipe /> <Reacipe />  <Reacipe />
+
+        
+        <Reacipe />
+        <Reacipe />
+        <Reacipe />
+        <Reacipe />
+        <Reacipe />
+        <Reacipe /><Reacipe />
       {/* ))} */}
+      </div>
     </div>
   )
    
