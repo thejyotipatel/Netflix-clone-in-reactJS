@@ -1,0 +1,81 @@
+:root{
+    --bg-color: #f5f4f9;
+    --font-color: #151528;
+    --shadow-color: #d6d6ed; 
+    --transition: all 0.5s ease-in-out;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+.app{
+    height: 100vh;
+}
+
+.app h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--font-color);
+    margin: 0.5rem;
+}
+
+.search-form{
+    display: flex; 
+    justify-content: center;
+    width: 100vw; 
+    height: 15vh;
+}
+.search-form div{
+    margin-top: 1rem;
+    box-shadow:  
+        0px -1px 5px var(--shadow-color),
+         1px 5px 5px var(--shadow-color),
+         -1px 5px 5px var(--shadow-color);
+     width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+}
+input{ 
+    width: 85%; 
+    margin: 0;
+    height: 9vh; 
+    text-align: left;
+    padding-left: 1rem;
+    background-color: var(--bg-color); 
+    border: none;
+    outline: none; 
+    
+    border-radius: 5px;
+    font-size: 1rem; 
+}
+
+button{
+    width: 15%;
+    padding-right: 15px;
+    height: 9vh;
+    margin-left: 0;
+    background-color: var(--bg-color);
+    border: none;
+    outline: none; 
+    border-radius: 5px;
+    font-size: 1.2rem; 
+    color: var(--font-color);  
+    cursor: pointer;  
+}
+
+.recipe{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+    margin: 1rem;
+    height: 50vh;
+
+}

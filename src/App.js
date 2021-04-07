@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'  
  
 import './components/fontawesome-free-5.15.2-web/css/all.css'
-
 import Reacipe from './components/Reacipe'
+import './components/style.css'
+
 
 const App = () => {
   const APP_ID = '4ab33b7a'
@@ -38,40 +39,40 @@ const App = () => {
     setSearch("")
   }
   return (
-    <div onSubmit={getSearch} className="App">
-      <h1>Hello React</h1> 
+    <div onSubmit={getSearch} className="app">
+      <h1>Recipe App</h1> 
       <form 
         action="" 
         className="search-form">
-
+          <div> 
         <input 
           type="text" 
-          className="search-bar"
+          placeholder="Search for Recipes"
           value={search}  
           onChange={updateSearch}
         />
 
-        <button 
-          className="search-button" 
+        <button  
           types="submit">
           <i className="fas fa-search"></i>
         </button>
-
+        </div>
       </form>
-
-      {recipes.map(recipe =>( 
+{/* 
+      {recipes.map(recipe =>(  */}
         <Reacipe 
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-          cuisineType={recipe.recipe.cuisineType}
-          source={recipe.recipe.source}
-          totalTime={recipe.recipe.totalTime}
-          url={recipe.recipe.url}
+          // key={recipe.recipe.label}
+          // title={recipe.recipe.label}
+          // calories={recipe.recipe.calories}
+          // image={recipe.recipe.image}
+          // ingredients={recipe.recipe.ingredients}
+          // cuisineType={recipe.recipe.cuisineType}
+          // source={recipe.recipe.source}
+          // totalTime={recipe.recipe.totalTime}
+          // url={recipe.recipe.url}
         />
-      ))}
+        {/* <Reacipe /> */}
+      {/* ))} */}
     </div>
   )
    
