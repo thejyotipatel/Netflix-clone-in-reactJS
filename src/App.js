@@ -11,7 +11,7 @@ const App = () => {
   
   const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('chicken')
+  const [query, setQuery] = useState('mango')
 
   useEffect(() =>{ 
     getRecipes()
@@ -58,30 +58,23 @@ const App = () => {
         </button>
         </div>
       </form>
-{/* 
-      {recipes.map(recipe =>(  */}
-      <div className="recipes"> 
-        <Reacipe 
-          // key={recipe.recipe.label}
-          // title={recipe.recipe.label}
-          // calories={recipe.recipe.calories}
-          // image={recipe.recipe.image}
-          // ingredients={recipe.recipe.ingredients}
-          // cuisineType={recipe.recipe.cuisineType}
-          // source={recipe.recipe.source}
-          // totalTime={recipe.recipe.totalTime}
-          // url={recipe.recipe.url}
-        />
-        <Reacipe /> <Reacipe />  <Reacipe />
 
-        
-        <Reacipe />
-        <Reacipe />
-        <Reacipe />
-        <Reacipe />
-        <Reacipe />
-        <Reacipe /><Reacipe />
-      {/* ))} */}
+      <div className="recipes"> 
+        {recipes.map(recipe =>( 
+          
+          <Reacipe 
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+            cuisineType={recipe.recipe.cuisineType}
+            source={recipe.recipe.source}
+            totalTime={recipe.recipe.totalTime}
+            url={recipe.recipe.url}
+          /> 
+        ))}
+      
       </div>
     </div>
   )
