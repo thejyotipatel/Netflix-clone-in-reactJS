@@ -1,0 +1,31 @@
+import React, { useState, useEffect } from 'react'
+ 
+import instance from './axios'
+
+const baseUrl = "/https://api.themoviedb.org/t/p/original"
+
+const Row = ({title, fetchUrl}) => {
+    const [movies, setMovies] = useState([])
+
+    useEffect(() =>{
+        async function fechData(){
+            const req = await instance.get(fetchUrl)
+            setMovies(req.data.results)
+            return req 
+        }
+        fechData()
+    }, [fetchUrl])
+
+    return (
+        <div>
+            <h2>{title}</h2>
+
+            <div className="posters">
+                {movies.map(movie => (
+                    <img src={`${baseUrl}${movie.poster_path}`} alt={movie.name} />
+                )) }
+            </div>
+        </div>
+    )
+}
+export default Row;
