@@ -1,0 +1,79 @@
+:root{
+    --bg-color: #181818;
+    --font-color: #ffffff;
+    --font-light-color: rgb(163 163 163);
+    --shadow-color: #d6d6ed; 
+    --transition: all 0.5s ease-in-out;
+    --menu-color: #000000bf;
+}
+*{
+    box-sizing: border-box;
+    margin: 0; 
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.rows{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 20%;
+    border: none;
+}
+.rows h2{ 
+    text-align: left;
+    margin: 1rem;
+}
+.posters{
+    display: flex;
+    overflow-x: scroll;  
+    overflow-y: hidden;
+    padding: 20px;
+}
+.posters::-webkit-scrollbar{
+    display: none;
+}
+img{
+    margin-right: 10px;
+    max-height: 100%;
+    width: 100%; 
+    object-fit: contain;
+    transition: transform 450ms;
+    cursor: pointer;
+} 
+
+img:hover{
+    transform: scale(1.08);
+}
+
+.menu-bar{
+    width: 100%;
+    height: 9vh;
+    background-color: var(--menu-color);
+    z-index: 1;
+    position: fixed;
+    align-items: center;
+}
+
+.menu{ 
+    margin: auto;
+    display: block;
+    align-content: center;
+    background-color: red;
+}
+.menu img{
+    left: 0;
+
+}
+.menu input{
+    right: 0;
+    text-align: right;
+    margin-left: auto;
+}
