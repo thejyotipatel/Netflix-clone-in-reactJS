@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
  
 import instance from './axios'
+
 import './style.css'
-const baseUrl = "https://image.tmdb.org/t/p/original"
-const img = require("./thumbs/01.jpg")
+
+const baseUrl = "https://image.tmdb.org/t/p/original/" 
+
 const Row = ({title, fetchUrl, isLargeRow}) => {
+
     const [movies, setMovies] = useState([])
 
     useEffect(() =>{
@@ -14,8 +17,8 @@ const Row = ({title, fetchUrl, isLargeRow}) => {
     async function fechData(){
         const req = await fetch(instance.baseURL + fetchUrl)
         const data = await req.json()
-        setMovies(data.results)
-        console.log(data.results)
+        setMovies(data.results) 
+        console.log(data) 
     }
 
     return (
@@ -23,19 +26,21 @@ const Row = ({title, fetchUrl, isLargeRow}) => {
             <h2>{title}</h2>
 
             <div className="posters">
-                {movies.map(movie => {
+                {movies.map(movie => (
                     <img
                         key={movie.id}
-                        className=`posters-img ${isLargeRow}` 
-                        src={`
-                            ${baseUrl}${isLargeRow ? movie.poster_path : movie.background_path}`} alt={movie.title} 
+                        className={
+                            `posters-img ${isLargeRow && "postersLarge-img"}` 
+                        }
+                        src={`${baseUrl}
+                            ${isLargeRow ? movie.poster_path : movie.backdrop_path}
+                            `} 
+                        alt={movie.title} 
                     />
-                }) }
+                )) }
                  
             </div>
         </div>
-    )
-
-    
+    ) 
 }
 export default Row; 

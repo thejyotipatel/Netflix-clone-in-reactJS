@@ -5,29 +5,39 @@ import Request from './components/Request'
 import Menu from './components/menu'
 import Banner from './components/Banner'
 
+import './components/style.css'
+
 const App = () =>{
 
     return(
-        <div > 
+        <div className="App"> 
             <Menu />
             <Banner />
             <Row 
                 title='Netfliex Originals' 
                 fetchUrl={Request.fetchNetfliexOriginals}
-                isLargeRow
+                isLargeRow={true}
             />
-            <Row title='Netfliex Top Rated' fetchUrl={Request.fetchTopRated}/>
-            <Row title='Netfliex Top Rated' fetchUrl={Request.fetchTopRated}/>
-            {/* <Row 
-                title='Netfliex Originals' 
-                fetchUrl={Request.fetchNetfliexOriginals}
-                isLargeRow
-                />
-            <Row title='Netfliex Comedy' fetchUrl={Request.fetchComedyMovies} />
-            <Row title='Netfliex Horror' fetchUrl={Request.fetchHorrorMovies} />
-            <Row title='Netfliex Romance' fetchUrl={Request.fetchRomanceMovie} />
-            <Row title='Netfliex Action' fetchUrl={Request.fetchActionMovies} />
-            <Row title='Netfliex Documentaries' fetchUrl={Request.fetchDocumentaries} /> */}
+            <Row 
+                title='Netfliex Comedy' 
+                fetchUrl={Request.fetchComedyMovies} 
+            />
+            <Row 
+                title='Netfliex Horror' 
+                fetchUrl={Request.fetchHorrorMovies} 
+            />
+            <Row 
+                title='Netfliex Romance'
+                fetchUrl={Request.fetchRomanceMovie}
+              />
+            <Row 
+                title='Netfliex Action' 
+                fetchUrl={Request.fetchActionMovies} 
+            />
+            <Row 
+                title='Netfliex Documentaries' 
+                fetchUrl={Request.fetchDocumentaries}
+            />
         </div>
     )
 }
