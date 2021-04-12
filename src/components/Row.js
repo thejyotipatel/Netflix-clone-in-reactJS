@@ -4,7 +4,7 @@ import instance from './axios'
 import './style.css'
 const baseUrl = "https://image.tmdb.org/t/p/original"
 const img = require("./thumbs/01.jpg")
-const Row = ({title, fetchUrl}) => {
+const Row = ({title, fetchUrl, isLargeRow}) => {
     const [movies, setMovies] = useState([])
 
     useEffect(() =>{
@@ -23,28 +23,19 @@ const Row = ({title, fetchUrl}) => {
             <h2>{title}</h2>
 
             <div className="posters">
-                {/* {movies.map(movie => (
-                    key={movie.id}
-                    // <img src={`${baseUrl}${movie.poster_path}`} alt={movie.title} />
-                )) } */}
-                <img  src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
-                <img src={ img.default} alt="hello"/>
+                {movies.map(movie => {
+                    <img
+                        key={movie.id}
+                        className=`posters-img ${isLargeRow}` 
+                        src={`
+                            ${baseUrl}${isLargeRow ? movie.poster_path : movie.background_path}`} alt={movie.title} 
+                    />
+                }) }
+                 
             </div>
         </div>
     )
+
+    
 }
 export default Row; 

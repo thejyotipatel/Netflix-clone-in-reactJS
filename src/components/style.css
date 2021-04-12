@@ -17,9 +17,7 @@ body{
     background-color: var(--bg-color);
     color: var(--font-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
-
 .rows{
     display: flex;
     justify-content: flex-start;
@@ -40,17 +38,24 @@ body{
 .posters::-webkit-scrollbar{
     display: none;
 }
-img{
+.posters-img{
     margin-right: 10px;
-    max-height: 100%;
+    max-height: 150px;
     width: 100%; 
     object-fit: contain;
     transition: transform 450ms;
     cursor: pointer;
 } 
 
-img:hover{
+.posters-img:hover{
     transform: scale(1.08);
+}
+
+.postersLarge-img{
+    max-height: 250px;
+}
+.postersLarge-img:hover{
+    transform: scale(1.09);
 }
 
 .menu-bar{
@@ -61,17 +66,12 @@ img:hover{
     position: fixed;
     align-items: center;
 }
-
 .menu{ 
     margin: auto;
     display: block;
     align-content: center;
     background-color: red;
-}
-.menu img{
-    left: 0;
-
-}
+} 
 .menu input{
     right: 0;
     text-align: right;
