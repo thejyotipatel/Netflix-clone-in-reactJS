@@ -2,7 +2,7 @@ import React from 'react'
  
 import Row from './components/Row'
 import Request from './components/Request'
-import Menu from './components/menu'
+import Menu from './components/Menu'
 import Banner from './components/Banner'
 
 import './components/style.css'

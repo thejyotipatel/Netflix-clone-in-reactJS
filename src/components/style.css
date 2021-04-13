@@ -128,8 +128,7 @@ body{
     padding: 20px;
     height: 30px;
     display: flex;
-    justify-content: flex-start;
-    background-color: #111;
+    justify-content: flex-start; 
     z-index: 1;
 
     transition-timing-function: ease-in;
